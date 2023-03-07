@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %} earthquakes between a particular date raange{% endblock %}
+{% block content %}
+
+<h1>1002034491, Avinash Sallagonda</h1>
+<h2>Earthquake information retrieval system</h2>
+
+<h4>Earthquake Information</h4>
+<table border="1px">
+  <thead>
+    <th>TIME</th>
+    <th>LATITUDE</th>
+    <th>LONGTITUDE</th>
+    <th>DEPTH</th>
+    <th>MAG</th>
+    <th>MAGTYPEE</th>
+    <th>NST</th>
+    <th>GAP</th>
+    <th>DMIN</th>
+    <th>RMS</th>
+    <th>NET</th>
+    <th>ID</th>
+    <th>UPDATED</th>
+    <th>PLACE</th>
+    <th>TYPE</th>
+    <th>HOTIZONTALERROR</th>
+    <th>DEPTHERROR</th>
+    <th>MAGERROR</th>
+    <th>MAGNST</th>
+    <th>STATUS</th>
+    <th>LOCATIONSOURCE</th>
+    <th>MAGSOURCE</th>
+  </thead>
+  <tbody>
+    {% for info in ci %}
+    <tr>
+      <td>{{info["time"]}}</td>
+      <td>{{info["latitude"]}}</td>
+      <td>{{info["longitude"]}}</td>
+      <td>{{info["depth"]}}</td>
+      <td>{{info["mag"]}}</td>
+      <td>{{info["magType"]}}</td>
+      <td>{{info["nst"]}}</td>
+      <td>{{info["gap"]}}</td>
+      <td>{{info["dmin"]}}</td>
+      <td>{{info["rms"]}}</td>
+      <td>{{info["net"]}}</td>
+      <td>{{info["id"]}}</td>
+      <td>{{info["updated"]}}</td>
+      <td>{{info["place"]}}</td>
+      <td>{{info["type"]}}</td>
+      <td>{{info["horizontal"]}}</td>
+      <td>{{info["depthError"]}}</td>
+      <td>{{info["magError"]}}</td>
+      <td>{{info["magNst"]}}</td>
+      <td>{{info["status"]}}</td>
+      <td>{{info["locationSource"]}}</td>
+      <td>{{info["magSource"]}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
